@@ -1,0 +1,11 @@
+<Patients>
+    <Patient>
+        <id>222</id>
+        <name>gayatri</name>
+    </Patient>
+
+    <Patient>
+        <id>111</id>
+        <name>santu</name>
+    </Patient>
+</Patients>
