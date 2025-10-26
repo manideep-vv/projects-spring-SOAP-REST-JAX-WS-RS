@@ -1,0 +1,12 @@
+<book title="Real World Java">
+    <edition>1</edition>
+    <publisher>wiley</publisher>
+<!--    <Title>Real world .net</Title>-->
+    <!-- multiple authors -->
+    <authors>
+        <singer>mangli</singer>
+        <author>Victor Grazi</author>
+        <author>Jeanne Boyarsky</author>
+    </authors>
+    <paperback />
+</book>

@@ -1,0 +1,74 @@
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://controller.ampf.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="StudentSOAPControllerService" targetNamespace="http://controller.ampf.com/">
+    <wsdl:types>
+        <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://controller.ampf.com/" elementFormDefault="unqualified" targetNamespace="http://controller.ampf.com/" version="1.0">
+            <xs:element name="getStudentAddress" type="tns:getStudentAddress"/>
+            <xs:element name="getStudentAddressResponse" type="tns:getStudentAddressResponse"/>
+            <xs:element name="getStudentName" type="tns:getStudentName"/>
+            <xs:element name="getStudentNameResponse" type="tns:getStudentNameResponse"/>
+            <xs:complexType name="getStudentAddress">
+                <xs:sequence/>
+            </xs:complexType>
+            <xs:complexType name="getStudentAddressResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="return" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="getStudentName">
+                <xs:sequence/>
+            </xs:complexType>
+            <xs:complexType name="getStudentNameResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="return" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="getStudentNameResponse">
+        <wsdl:part element="tns:getStudentNameResponse" name="parameters"> </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getStudentName">
+        <wsdl:part element="tns:getStudentName" name="parameters"> </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getStudentAddress">
+        <wsdl:part element="tns:getStudentAddress" name="parameters"> </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getStudentAddressResponse">
+        <wsdl:part element="tns:getStudentAddressResponse" name="parameters"> </wsdl:part>
+    </wsdl:message>
+    <wsdl:portType name="StudentSOAPController">
+        <wsdl:operation name="getStudentAddress">
+            <wsdl:input message="tns:getStudentAddress" name="getStudentAddress"> </wsdl:input>
+            <wsdl:output message="tns:getStudentAddressResponse" name="getStudentAddressResponse"> </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getStudentName">
+            <wsdl:input message="tns:getStudentName" name="getStudentName"> </wsdl:input>
+            <wsdl:output message="tns:getStudentNameResponse" name="getStudentNameResponse"> </wsdl:output>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="StudentSOAPControllerServiceSoapBinding" type="tns:StudentSOAPController">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="getStudentAddress">
+            <soap:operation soapAction="" style="document"/>
+            <wsdl:input name="getStudentAddress">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="getStudentAddressResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getStudentName">
+            <soap:operation soapAction="" style="document"/>
+            <wsdl:input name="getStudentName">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="getStudentNameResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="StudentSOAPControllerService">
+        <wsdl:port binding="tns:StudentSOAPControllerServiceSoapBinding" name="StudentSOAPControllerPort">
+            <soap:address location="http://localhost:8080/student"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>
